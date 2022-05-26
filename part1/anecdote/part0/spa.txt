@@ -1,0 +1,14 @@
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server --> browser: returns HTML-code
+note left of browser:
+    browser executes html code
+    and fetch other linked files
+end note
+browser->server: HTTP GET main.css
+server --> browser: returns main.css
+browser->server: HTTP GET spa.js
+server --> browser: returns spa.js
+note over browser: spa.js executes and requests for data.json
+browser->server: HTTP GET /data.json
+server --> browser: returns data.json
+note left of browser: spa code displays the data.json on the browser page
